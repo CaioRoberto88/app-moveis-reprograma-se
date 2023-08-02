@@ -1,0 +1,118 @@
+<section>
+  <h1 class="text-center py-3">Perfil de Usuário</h1>
+  <form
+    class="form_container shadow-lg needs-validation"
+    action="/usuario/edita"
+    method="post"
+    novalidate
+  >
+    <input type="hidden" name="idUsuario" value={{idUsuario}} />
+    <div class="row g-3">
+      <div class="my-5">
+        <img src="{{dados.imagem}}" alt="{{dados.nome}}" />
+      </div>
+      <h5 class="text-center">Informações pessoais:</h5>
+      <div class="col-md-6 col-12">
+        <label class="form-label" for="nome">Nome completo</label>
+        <input
+          class="form-control shadow-none"
+          type="text"
+          name="nome"
+          id="nome"
+          value="{{dados.nome}}"
+        />
+      </div>
+      <div class="col-md-6 col-12">
+        <label class="form-label" for="email">E-mail</label>
+        <input
+          class="form-control shadow-none"
+          type="email"
+          name="email"
+          id="email"
+          value={{dados.email}}
+        />
+      </div>
+      <div class="col-md-6 col-12">
+        <label class="form-label" for="senha">Senha</label>
+        <input
+          class="form-control shadow-none"
+          type="password"
+          name="senha"
+          id="senha"
+          placeholder="Digite sua senha"
+          required
+        />
+        <span class="invalid-feedback fs-5">Insira sua senha atual para
+          confirmar a atualização de dados!</span>
+      </div>
+      <div class="col-md-6 col-12">
+        <label class="form-label" for="confirmaSenha">Confirma senha</label>
+        <input
+          class="form-control shadow-none"
+          type="password"
+          name="confirmaSenha"
+          id="confirmaSenha"
+          placeholder="Digite sua confirmação de senha"
+          required
+        />
+        <span class="invalid-feedback fs-5">Insira sua senha atual para
+          confirmar a atualização de dados!</span>
+      </div>
+      <div class="col-md-6 col-12">
+        <label class="form-label" for="telefone">Telefone</label>
+        <input
+          class="form-control shadow-none"
+          type="text"
+          name="telefone"
+          id="telefone"
+          value={{dados.telefone}}
+        />
+      </div>
+      <div class="col-md-6 col-12">
+        <label class="form-label" for="imagem">Imagem de perfil</label>
+        <input
+          class="form-control shadow-none"
+          type="text"
+          name="imagem"
+          id="imagem"
+          value="{{dados.imagem}}"
+          placeholder="Insira URL da sua foto de perfil"
+        />
+      </div>
+    </div>
+    <input
+      class="btn btn-form col-md-3 col-12 my-5"
+      type="submit"
+      value="Atualizar Cadastro"
+    />
+    {{#if erro}}
+    <div>
+       <h5
+              class="my-3 col-md-6 text-center text-bg-danger w-50 m-auto p-3"
+            >{{erro}}</h5>
+      </div>
+    {{/if}}
+  </form>
+  <script>
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+  </script>
+</section>

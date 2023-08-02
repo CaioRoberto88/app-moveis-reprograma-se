@@ -1,0 +1,78 @@
+<section>
+  <h1 class="text-center py-3">Cadastro</h1>
+  <p class="form-sub-titulo text-center fs-4">Faça seu cadastro agora, e comece
+    a fazer negócios!</p>
+  <form action="/cadastro" method="post">
+    <div class="row g-3">
+      <div class="col-md-6 col-12">
+        <label class="form-label" for="nome">Nome completo</label>
+        <input
+          class="form-control shadow-none"
+          type="text"
+          name="nome"
+          id="nome"
+          placeholder="Digite seu nome"
+        />
+      </div>
+      <div class="col-md-6 col-12">
+        <label class="form-label" for="email">E-mail</label>
+        <input
+          class="form-control shadow-none"
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Digite seu e-mail"
+        />
+      </div>
+      <div class="col-md-6 col-12">
+        <label class="form-label" for="senha">Senha</label>
+        <input
+          class="form-control shadow-none"
+          type="password"
+          name="senha"
+          id="senha"
+          placeholder="Digite sua senha"
+        />
+      </div>
+      <div class="col-md-6 col-12">
+        <label class="form-label" for="nome">Confirma senha</label>
+        <input
+          class="form-control shadow-none"
+          type="password"
+          name="confirmaSenha"
+          id="confirmaSenha"
+          placeholder="Digite sua confirmação de senha"
+        />
+      </div>
+      <div class="col-md-6 col-12">
+        <label class="form-label" for="nome">Telefone</label>
+        <input
+          class="form-control shadow-none"
+          type="text"
+          name="telefone"
+          id="telefone"
+          placeholder="Digite seu telefone de contato"
+        />
+      </div>
+      <div class="m-auto">
+        <input
+          class="btn btn-form col-md-3 col-12 my-md-4 my-4"
+          type="submit"
+          value="Enviar Cadastro"
+        />
+        {{#if sucesso}}
+          <h5
+            class="text-center text-bg-success w-50 m-auto p-3"
+          >{{sucesso}}</h5>
+        {{/if}}
+        {{#if erro}}
+          <h5 class="text-center text-bg-danger w-50 m-auto p-3">{{erro}}</h5>
+        {{/if}}
+      </div>
+    </div>
+  </form>
+  <p>
+    Já possui cadastro?
+    <a href="/usuarios/login"> Cliqui aqui!</a>
+  </p>
+</section>

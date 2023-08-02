@@ -1,0 +1,63 @@
+<section>
+  <h1 class="text-center py-3">Informações Gerais do Produto</h1>
+  <input type="hidden" name="idMovel" id="idMovel" value="{{idMovel}}" />
+
+  <div class="row text-center">
+    <div class="col-12">
+      <h2 class="mt-5">{{movel.nomeProduto}}</h2>
+      <img
+        class="img-fluid movel-imagem-detalhes"
+        src="{{movel.imagem}}"
+        alt="{{movel.nomeProduto}}"
+      />
+
+      <span
+        class="movel-status text-white bg-warning fs-3 fw-bold d-block m-auto py-3 my-3 rounded-1"
+      >R${{movel.preco}}</span>
+      <div class="contato">
+        {{#if movel.idComprador}}
+          {{#if movel.idComprador}}
+
+            {{#if 0 includeZero=movel.situacao}}
+              <p
+                class="movel-status text-white bg-warning fs-3 fw-bold d-block m-auto py-3 my-3 rounded-1"
+              >
+                Em negociação
+              </p>
+
+            {{/if}}
+            {{#unless movel.situacao}}
+              <h3
+                class="movel-status text-white bg-danger fs-3 fw-bold d-block m-auto py-3 my-3 rounded-1"
+              >Vendido</h3>
+            {{/unless}}
+          {{/if}}
+        {{else}}
+          <form
+            class="form-movel"
+            action="/moveis/desejocomprar/{{movel.idMovel}}"
+            method="post"
+          >
+            <input
+              class="movel-status text-white bg-success border-0 fs-3 fw-bold d-block m-auto py-3 my-3 rounded-1"
+              type="submit"
+              value="Soliticar negociação"
+            />
+          </form>
+        {{/if}}
+        <div class="infor-contato">
+          <h4 class="text-white fw-bold">Informações do vendendor</h4>
+          <p class="text-white fs-5 fw-bold">Nome</p>
+          <h5 class="text-black">
+            {{movel.nomeVendedor}}</h5>
+        </div>
+      </div>
+      <div class="movel-descricao h-auto">
+        <p><span class="fw-bold">Condição</span>: - {{movel.condicao}}</p>
+        <p><span class="fw-bold">Cor do Produto</span>: - {{movel.cor}}</p>
+        <h6 class="text-white my-3 fw-bold">Informações gerais do produto:</h6>
+        <p>{{movel.descricao}}</p>
+      </div>
+    </div>
+  </div>
+</section>

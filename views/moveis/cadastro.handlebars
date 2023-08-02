@@ -1,0 +1,104 @@
+<h1 class="text-center py-5">Anuncie seu móvel agora!</h1>
+<section>
+  <form action="/moveis/cadastro" method="post">
+    <div class="row g-3">
+      <div class="col-md-6 col-12">
+        <label class="form-label fw-bold" for="nomeProduto">Nome do produto</label>
+        <input
+          class="form-control shadow-none"
+          type="text"
+          name="nomeProduto"
+          id="nomeProduto"
+          placeholder="Insira o nome do produto"
+        />
+      </div>
+      <div class="col-md-6 col-12">
+        <label class="form-label fw-bold" for="condicao">Condição</label>
+        <input
+          class="form-control shadow-none"
+          type="text"
+          name="condicao"
+          id="condicao"
+          placeholder="Insira a condição do produto: ex: Novo ou Usado"
+        />
+      </div>
+      <div class="col-md-6 col-12">
+        <label class="form-label fw-bold" for="cor">Cor</label>
+        <input
+          class="form-control shadow-none"
+          type="text"
+          name="cor"
+          id="cor"
+          placeholder="Insira a cor do produto"
+        />
+      </div>
+      <div class="col-md-6 col-12">
+        <label class="form-label fw-bold" for="preco">Preço R$</label>
+        <input
+          class="form-control shadow-none"
+          type="text"
+          name="preco"
+          id="preco"
+          placeholder="Insira o preço do produto"
+        />
+      </div>
+      <div class="col-md-6 col-12">
+        <label class="form-label fw-bold" for="imagem">Imagem do Produto</label>
+        <input
+          class="form-control shadow-none"
+          type="text"
+          name="imagem"
+          id="imagem"
+          placeholder="Insira uma URL da imagem do produto"
+        />
+      </div>
+      <div class="col-md-6 col-12">
+        <label class="form-label fw-bold" for="descricao">Descrição do produto</label>
+        <textarea
+          class="form-control shadow-none"
+          name="descricao"
+          id="descricao"
+          placeholder="Insira uma breve descrição do produto"
+        ></textarea>
+      </div>
+      <div class="row g-3">
+        <h5 class="text-center fw-bold">Informações para contato</h5>
+        <div class="col-md-6 col-12">
+          <label class="form-label fw-bold" for="nomeVendedor">Nome do vendedor</label>
+          <input
+            class="form-control shadow-none"
+            type="text"
+            name="nomeVendedor"
+            id="nomeVendedor"
+            placeholder="Insira seu nome"
+          />
+        </div>
+        <div class="col-md-6 col-12">
+          <label class="form-label fw-bold" for="telefoneVendedor">Telefone do
+            vendedor</label>
+          <input
+            class="form-control shadow-none"
+            type="text"
+            name="telefoneVendedor"
+            id="telefoneVendedor"
+            placeholder="Insira seu número para contato"
+          />
+        </div>
+        <div>
+          <input
+            class="btn btn-form col-md-3 col-12 my-3"
+            type="submit"
+            value="Cadastrar Móvel"
+          />
+        </div>
+      </div>
+    </div>
+    {{#if erro}}
+      <div>
+        <h5
+          class="my-3 col-md-6 text-center text-bg-danger w-50 m-auto p-3"
+        >{{erro}}</h5>
+      </div>
+    {{/if}}
+  </form>
+</section>

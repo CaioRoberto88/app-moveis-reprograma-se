@@ -1,0 +1,43 @@
+<section>
+  <h1 class="text-center py-5">Lista de Móveis</h1>
+  {{#if sucesso}}
+    <div>
+      <h5
+        class="my-3 col-md-6 text-center text-bg-success w-50 m-auto p-3"
+      >{{sucesso}}</h5>
+    </div>
+  {{/if}}
+  {{#if erro}}
+    <div>
+      <h5
+        class="my-3 col-md-6 text-center text-bg-danger w-50 m-auto p-3"
+      >{{erro}}</h5>
+    </div>
+  {{/if}}
+  <div class="row g-3 my-5">
+    {{#each moveis}}
+      <div class="col-lg-3 col-md-6 col-sm-8 col-12">
+        <div class="card card-moveis text-center h-100">
+          <div class="card-header py-3">
+            <h5 class="card-titulo">{{this.nomeProduto}}</h5>
+          </div>
+          <img
+            class="img-fluid"
+            src="{{this.imagem}}"
+            alt="{{this.nomeProduto}}"
+          />
+          <div>
+            <h4 class="bg-card-preco py-3 my-3 rounded-1 w-50 m-auto">R$
+              {{this.preco}}</h4>
+          </div>
+          <div class="card-footer">
+            <p><a
+                class="btn btn-geral fw-bold"
+                href="/moveis/movel/{{this.idMovel}}"
+              >Clique para mais informações</a></p>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</section>

@@ -1,0 +1,35 @@
+<section>
+  <h1 class="text-center py-3">Móveis em negociação</h1>
+  {{#if dados includedZero=true}}
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nome do Produto</th>
+          <th>Imagem do Produto</th>
+          <th>Vendedor</th>
+          <th>Situação</th>
+        </tr>
+      </thead>
+      {{#each dados}}
+        <tbody>
+          <tr>
+            <td><p>{{this.nomeProduto}}</p></td>
+            <td><img src="{{this.imagem}}" alt="{{this.nomeProduto}}" /></td>
+            <td>{{this.nomeVendedor}}</td>
+            {{#if this.situacao includedZero=true}}
+              <td class="text-warning"><i
+                  class="bi bi-person-exclamation fs-4"
+                ></i>
+                Em negociação</td>
+            {{else}}
+              <td class="text-success"><i class="bi bi-person-check fs-4"></i>
+                Vendido!</td>
+            {{/if}}
+          </tr>
+        </tbody>
+      {{/each}}
+    </table>
+  {{else}}
+    <p class="text-center fs-4">Nenhuma negociação no momento..</p>
+  {{/if}}
+</section>

@@ -1,0 +1,349 @@
+/* ESTILOS GERAL */
+
+* {
+  font-family: Helvetica;
+}
+
+a {
+  text-decoration: none;
+  color: #0000ff;
+}
+p {
+  color: #fefefe;
+}
+h1 {
+  color: #401801;
+  font-weight: bold;
+}
+
+body {
+  min-height: 600px;
+  background-color: #a6907c;
+}
+section {
+  min-height: 600px;
+}
+
+/* NAVBAR */
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+.navbar-toggler {
+  background-color: #a6907c;
+}
+.img-logo {
+  height: 80px;
+  margin-right: 10px;
+}
+
+.navbar,
+footer {
+  background-color: #401801;
+}
+
+.nav-item a {
+  font-size: 18px;
+  color: #fefefe;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.nav-item a:hover {
+  color: #735a45;
+  text-decoration: none;
+}
+
+/* ALERTA DE MENSAGEM */
+.alerta-msg {
+  background-color: #ff0000;
+  padding: 2px;
+  bottom: 15px;
+  right: 15px;
+  border-radius: 80%;
+  position: relative;
+}
+
+/* CONTAINER PRINCIPAL DA APP */
+
+.container-principal {
+  min-height: 80vh;
+}
+
+/* PEFIL USUÁRIO */
+.form_container {
+  background-color: #735a45;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 50px 0px;
+}
+
+.form_container img {
+  display: block;
+  background-size: cover;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* CARD DE MOVEIS */
+
+.card-moveis {
+  background-color: #260101;
+}
+
+.card-imagem {
+  display: block;
+  height: 350px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.card-titulo {
+  color: #fefefe;
+}
+.bg-card-preco {
+  color: #fefefe;
+  background-color: #ffce30;
+}
+
+.btn-geral {
+  color: #fff;
+  background-color: #ff0000;
+  padding: 7px 10px;
+  transition: 0.3s;
+}
+
+.btn-geral:hover {
+  color: #fefefe;
+  background-color: rgb(172, 67, 67);
+  padding: 7px 10px;
+}
+
+/* MOVEl INDIVIDUAL */
+
+.movel-status {
+  width: 50%;
+}
+
+.infor-contato {
+  width: 50%;
+  display: block;
+  background-color: #735a45;
+  padding: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.movel-imagem-detalhes {
+  height: 600px;
+  width: 800px;
+}
+
+.movel-descricao {
+  background-color: #735a45;
+  height: 200px;
+  padding: 20px;
+  margin: 20px 0px;
+}
+
+.movel-descricao p {
+  color: #fefefe;
+  letter-spacing: 0.7px;
+  text-align: left;
+}
+
+/* MEUS MOVEIS */
+
+table {
+  --bs-body-bg: #735a45;
+  --bs-body-color: #fefefe;
+}
+
+.table img {
+  height: 100px;
+}
+.table td {
+  vertical-align: middle;
+  padding: 20px;
+}
+
+.sem-negociacao {
+  background-color: #d9cec1;
+}
+.sem-negociacao p {
+  padding: 15px 15px;
+}
+
+.btn-concluir {
+  width: 100px;
+  font-size: 14px;
+  background-color: #198754;
+  transition: 0.3s;
+}
+.btn-concluir:hover {
+  background-color: #44bd84;
+}
+
+.btn-cancelar,
+.btn-remover {
+  width: 100px;
+  font-size: 14px;
+  background-color: #ff0000;
+  transition: 0.3s;
+}
+.btn-cancelar:hover,
+.btn-remover:hover {
+  background-color: #cf6363;
+}
+
+/* FORMULARIOS */
+
+.form-sub-titulo {
+  color: #735a45;
+}
+
+label {
+  font-weight: bold;
+}
+
+.form-control {
+  color: #260101;
+  padding: 12px;
+  border: 1px solid #d9cec1;
+  border-radius: 5px;
+}
+.form-control:focus {
+  padding: 12px;
+  border: 1px solid #260101;
+  border-radius: 5px;
+}
+
+.form-control::placeholder {
+  color: #735a45;
+}
+
+.btn-form,
+.btn-perfil {
+  color: #fff;
+  font-weight: bold;
+  background-color: #260101;
+  padding: 12px;
+}
+
+.btn-form:hover {
+  color: #fff;
+  font-weight: bold;
+  background-color: #3e2929;
+  padding: 12px;
+}
+
+/* NOSSAS REDES SOCIAS */
+.bi-instagram,
+.bi-facebook,
+.bi-youtube {
+  font-size: 16px;
+  padding: 0 5px;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.bi-instagram:hover,
+.bi-facebook:hover,
+.bi-youtube:hover {
+  padding: 0 5px;
+  color: #735a45;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 576px) {
+  .movel-status {
+    width: 100%;
+  }
+
+  .infor-contato {
+    width: 100%;
+    display: block;
+    background-color: #735a45;
+    padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 992px) {
+  /* PEQUENA ANIMAÇÃO PARA USUÁRIOS DE DISPOSITIVOS MÓVEIS */
+  .seta {
+    color: #401801;
+    animation: go-back 5s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes go-back {
+    from {
+      transform: translateX(0px);
+    }
+    to {
+      transform: translateX(100px);
+    }
+  }
+}
+
+/* ==========================================================  */
+
+/* CORES DO PROJETO */
+
+/* Color Theme Swatches in Hex */
+.Vilhelm-Lauritzen-Terminal-1-hex {
+  color: #d9cec1;
+}
+.Vilhelm-Lauritzen-Terminal-2-hex {
+  color: #735a45;
+}
+.Vilhelm-Lauritzen-Terminal-3-hex {
+  color: #a6907c;
+}
+.Vilhelm-Lauritzen-Terminal-4-hex {
+  color: #401801;
+}
+.Vilhelm-Lauritzen-Terminal-5-hex {
+  color: #260101;
+}
+
+/* Color Theme Swatches in RGBA */
+.Vilhelm-Lauritzen-Terminal-1-rgba {
+  color: rgba(216, 206, 192, 1);
+}
+.Vilhelm-Lauritzen-Terminal-2-rgba {
+  color: rgba(114, 90, 68, 1);
+}
+.Vilhelm-Lauritzen-Terminal-3-rgba {
+  color: rgba(165, 143, 124, 1);
+}
+.Vilhelm-Lauritzen-Terminal-4-rgba {
+  color: rgba(63, 24, 1, 1);
+}
+.Vilhelm-Lauritzen-Terminal-5-rgba {
+  color: rgba(38, 0, 0, 1);
+}
+
+/* Color Theme Swatches in HSLA */
+.Vilhelm-Lauritzen-Terminal-1-hsla {
+  color: hsla(33, 23, 80, 1);
+}
+.Vilhelm-Lauritzen-Terminal-2-hsla {
+  color: hsla(28, 25, 36, 1);
+}
+.Vilhelm-Lauritzen-Terminal-3-hsla {
+  color: hsla(28, 18, 56, 1);
+}
+.Vilhelm-Lauritzen-Terminal-4-hsla {
+  color: hsla(22, 96, 12, 1);
+}
+.Vilhelm-Lauritzen-Terminal-5-hsla {
+  color: hsla(0, 96, 7, 1);
+}

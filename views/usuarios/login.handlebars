@@ -1,0 +1,56 @@
+<section>
+  <h1 class="text-center py-3">Faça o seu Login</h1>
+  <p class="form-sub-titulo text-center fs-4">E comece a fazer negócios agora!</p>
+  <form action="/usuario/login" method="post">
+    <div class="row d-block">
+      <div class="col-md-6 m-auto mb-3">
+        <label class="form-label" for="email">E-mail</label>
+        <input
+          class="form-control shadow-none"
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Digite seu e-mail"
+        />
+      </div>
+      <div class="col-md-6 m-auto">
+        <label class="form-label" for="senha">Senha</label>
+        <input
+          class="form-control shadow-none"
+          type="password"
+          name="senha"
+          id="senha"
+          placeholder="Digite sua senha"
+        />
+        <small><a href="/">Esqueceu a senha?</a></small>
+      </div>
+
+      <div>
+        <input
+          class="btn btn-form offset-md-3 col-md-2 col-12 my-3"
+          type="submit"
+          value="Login"
+        />
+        {{#if sucesso}}
+          <div>
+            <h5
+              class="my-3 col-md-6 text-center text-bg-success w-50 m-auto p-3"
+            >{{sucesso}}</h5>
+          </div>
+        {{/if}}
+        {{#if erro}}
+          <div>
+            <h5
+              class="my-3 col-md-6 text-center text-bg-danger w-50 m-auto p-3"
+            >{{erro}}</h5>
+          </div>
+        {{/if}}
+      </div>
+
+    </div>
+  </form>
+  <p class="offset-md-3">
+    Não possui cadastro?
+    <a href="/usuarios/cadastro"> Cliqui aqui!</a>
+  </p>
+</section>

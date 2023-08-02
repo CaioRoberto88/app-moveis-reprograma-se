@@ -1,0 +1,101 @@
+<section>
+  <h1 class="text-center my-3 py-3">Meus Móveis</h1>
+  {{#if movel}}
+  <div class="table-responsive">
+    <table class="table border">
+      <thead>
+        <tr>
+          <th>Nome do produto</th>
+          <th> Imagem do produto</th>
+          <th>Situação</th>
+          <th>Comprador</th>
+          <th>Telefone</th>
+          <th>Concluir</th>
+          <th>Cancelar</th>
+        </tr>
+      </thead>
+        {{#each movel}}
+          <tbody>
+            <tr>
+              <td>{{this.nomeProduto}}</td>
+              <td><img src="{{this.imagem}}" alt="{{this.nomeProduto}}" /></td>
+              {{#if this.idComprador}}
+                {{#if this.situacao}}
+                  <td class="text-center">
+                    <i class="bi bi-person-exclamation fs-2 text-warning"></i>
+                    <br />em negociação</td>
+                {{else}}
+                  <td class="text-center">
+                    <i class="bi bi-person-check fs-2 text-success"></i>
+                    <br />Vendido!
+                  </td>
+                {{/if}}
+                <td>{{this.nomeComprador}}</td>
+                <td><a
+                    class="text-white"
+                    href="https://wa.me/55{{this.telefoneComprador}}?text=Olá%20{{this.nomeComprador}}%20você%20demostrou%20interesse%20no%20meu%20{{this.nomeProduto}}%20você%20está%20online?"
+                    target="_blank"
+                  >{{this.telefoneComprador}}</a></td>
+                {{#if this.situacao}}
+                  <td>
+                    <form
+                      action="/moveis/vendaconcluida/{{this.idMovel}}"
+                      method="post"
+                    >
+                      <input
+                        class="btn btn-concluir"
+                        id=""
+                        type="submit"
+                        value="Concluir"
+                      />
+                    </form>
+                  </td>
+                  <td>
+                    <form
+                      action="/moveis/cancelavenda/{{this.idMovel}}"
+                      method="post"
+                    >
+                      <input
+                        class="btn btn-cancelar"
+                        type="submit"
+                        value="Cancelar"
+                      />
+                    </form>
+                  </td>
+                {{else}}
+                  <td>-</td>
+                  <td>
+                    <form
+                      action="/moveis/removemovel/{{this.idMovel}}"
+                      method="post"
+                    >
+                      <input
+                        class="btn btn-remover"
+                        type="submit"
+                        value="Remover"
+                      />
+                    </form>
+                  </td>
+                {{/if}}
+              {{else}}
+                <td class="fw-bold">Sem negociações</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              {{/if}}
+            </tr>
+          </tbody>
+        {{/each}}
+    </table>
+    <p class="d-sm-block d-lg-none seta">
+      <i class="bi bi-hand-index-thumb-fill fs-3"></i>
+      Deslize com seu dedo
+    </p>
+      {{else}}
+        <p class="text-center my-3">Você ainda não possui nenhum móvel a venda,
+          deseja começar a negociar agora?
+          <a href="/moveis/cadastro">Clique aqui!</a></p>
+      {{/if}}
+  </div>
+</section>
